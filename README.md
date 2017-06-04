@@ -4,7 +4,7 @@ This is the **old** (2014) C++99 implementation of the basic and the demand vers
 
 Class diagram:
 
-![](https://github.com/swillner/acclimate-demand/figures/class_diagram.png)
+![](./figures/class_diagram.png)
 
 Basic version described in:
 
