@@ -1,0 +1,61 @@
+<acclimate>
+    <network type="csv">
+        <parameter name="threshold" value="1000"/>
+        <transport value="1"/>
+        <flows data="intermediate_flows/data_Z_09.csv"
+               index="intermediate_flows/indices.csv"/>
+        <flows data="final_demand_flows/data_Y_09.csv"
+               col_index="final_demand_flows/FD_indices_columns.csv"
+               row_index="final_demand_flows/FD_indices_rows.csv"/>
+    </network>
+    <parameters>
+        <parameter name="delta_t" value="1"/>
+        <parameter name="demand" value="true"/>
+        <parameter name="no_self_supply" value="true"/>
+        <parameter name="history_weight" value="0.5"/>
+            <parameter name="possible_overcapacity_ratio" value="1.2"/>
+        <sector>
+            <parameter name="storage_refill_enforcement" value="10"/>
+            <parameter name="initial_storage_fill_factor" value="1"/>
+            <parameter name="upper_storage_limit" value="1"/>
+        </sector>
+    </parameters>
+    <scenario>
+        <timespan start="0" stop="50"/>
+        <event from="5" to="30">
+            <production_site region="JPN" sector="MACH">
+                <parameter name="remaining_capacity" value="0"/>
+            </production_site>
+        </event>
+    </scenario>
+    <output format="netcdf" file="output.nc" flush="false">
+        <observables>
+        	<production_site>
+        	    <parameter name="production"/>
+        	    <parameter name="production_capacity"/>
+        	    <parameter name="desired_production_capacity"/>
+        	    <parameter name="possible_production_capacity"/>
+        	    <parameter name="self_supply"/>
+        	    <parameter name="output_flow"/>
+        	    <parameter name="incoming_demand"/>
+        	    <parameter name="used_flow"/>
+        	    <parameter name="efficiency"/>
+        	</production_site>
+            <world>
+          		<parameter name="gdp"/>
+          		<parameter name="consumption"/>
+          		<parameter name="storage"/>
+          		<parameter name="transport_flow"/>
+          		<parameter name="production"/>
+          		<parameter name="production_capacity"/>
+          		<parameter name="production_used_flow"/>
+          		<parameter name="input_flow"/>
+          		<parameter name="business_connections"/>
+          		<parameter name="new_connections"/>
+          		<parameter name="supply_deficit"/>
+          		<parameter name="no_new_supplier_found"/>
+          		<parameter name="efficiency"/>
+            </world>
+        </observables>
+    </output>
+</acclimate>
