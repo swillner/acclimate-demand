@@ -1,6 +1,8 @@
 # Acclimate Model - Basic and Demand version
 
-This is the **old** (2014) C++98 implementation of the basic and the demand version of the economic loss propagation model Acclimate. It should not be used for research anymore.
+This is the **old** (2014) C++98 implementation of the basic and the demand version of the economic loss propagation model Acclimate.
+
+**This repository is for archiving-purposes only. The new and much improved version of Acclimate is [acclimate/acclimate](https://github.com/acclimate/acclimate)**
 
 Class diagram of the model core itself (frame classes ommitted):
 
